@@ -1,7 +1,7 @@
 ---
 title: "Week 1"
 date: 2019-02-11T11:28:01+11:00
-draft: true
+draft: false
 image: "/img/unsplash-photos-nehfi_SfqtU.jpg"
 thumbnail: /img/rowan.png
 ---

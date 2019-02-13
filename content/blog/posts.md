@@ -1,7 +1,7 @@
 ---
 title: "Ethical Hacking and Bug Bounties"
 date: 2019-02-13
-draft: true
+draft: false
 image: "/img/unsplash-photos-nehfi_SfqtU.jpg"
 thumbnail: /img/rowan.png
 ---
