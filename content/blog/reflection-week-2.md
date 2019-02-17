@@ -22,7 +22,7 @@ thumbnail:
 
 <img src="/img/reflection-week-2/ethical-hacking.png" alt="Ethical hacking blog post">
 
-<p>What I learnt through this process of research was quite eye opening to me. I was aware that in the traditional software development lifecycle, testing is always the stage which is conducted the least thoroughly and often skipped altogether. Enter Bug Bounties. Bug bounties provide a regulated and controlled marketplace platform for white hat hackers to identify and report on exploits for a monetary reward. With this relatively new phenomenon, companies are now adopting the mindset that that no system is invulnerable, and therefore will always have bugs. This can make companies slightly apathetic towards thoroughly testing before release, and they will instead release applications with the idea of patching after launch. Reflecting on this has made me aware of the drastically changing landscape of IT industry, in which companies are now welcoming the submission of bug reports. This is something that not too long-ago companies would have been dismissive or even apathetic towards.</p>
+<p>What I learnt through this process of research was quite eye opening to me. I was aware that in the traditional software development lifecycle, testing is always the stage which is conducted the least thoroughly and often skipped altogether. Enter Bug Bounties. Bug bounties provide a regulated and controlled marketplace platform for white hat hackers to identify and report on exploits for a monetary reward. With this relatively new phenomenon, companies are now adopting the mindset that no system is invulnerable, and therefore will always have bugs. This can make companies slightly apathetic towards thoroughly testing before release, and they will instead release applications with the idea of patching after launch. Reflecting on this has made me aware of the drastically changing landscape of IT industry, in which companies are now welcoming the submission of bug reports. This is something that not too long-ago companies would have been dismissive or even hostile towards.</p>
 
 <h3>Luke’s XSS Talk</h3>
 <p>On Wednesday (13/02/19), we had a talk on XSS by Luke. This was very insightful to me, as it gave me an understanding of the criticality of XSS vulnerabilities and why they are the number one exploit on the web.</p>
@@ -39,10 +39,9 @@ thumbnail:
 
 <p style="font-style: italic;">“If relatively simple attacks such as XSS and CSRF are still in the OWASP Top 10, why do they still pose such a threat to businesses?”</p>
 
-<p>As part of my demonstration, I thought it would be necessary to perform a simple XSS attack. The particular attack which I conducted was a Stored XSS attack provided by root-me (https://www.root-me.org/en/Challenges/Web-Client/XSS-Stored-1).</p>
+<p>As part of my demonstration, I thought it would be necessary to perform a simple XSS attack. The particular attack which I conducted was a Stored XSS attack provided by <a href="https://www.root-me.org/en/Challenges/Web-Client/XSS-Stored-1">root-me</a>.</p>
 
-<p>Stored XSS, often called second order XSS, is the most dangerous type of Cross-site scripting according to OWASP. This is because many applications allow users to store data on their site, and if this data is not sanitised or filtered correctly, the malicious data will appear to be part of the web site and run within the user’s browser under the privileges of the web app.
-https://www.owasp.org/index.php/Testing_for_Stored_Cross_site_scripting_(OTG-INPVAL-002)</p>
+<p>Stored XSS, often called second order XSS, is the most dangerous type of Cross-site scripting according to OWASP. This is because many applications allow users to store data on their site, and if this data is not sanitised or filtered correctly, the malicious data will appear to be part of the web site and run within the user’s browser under the privileges of the web app.</p>
 
 <p>As this is a stored XSS attack, we need some way of injecting the XSS through an input, in this case a textbox. It appears someone (the admin) is deleteing old messages, so we can hope that the injected JavaScript will run when they view the message This will hopefully steal or lift their cookie and send it to the supplied Request Bin URL. I will be using a Request Bin URL in order to collect requests that are made to the URL and this will be wrapped in an image tag. When the image is clicked, a request to the URL is made with the admin’s cookie. We can then look at Request Bin site linked to the URL to find the stolen cookie.</p>
 
@@ -62,6 +61,8 @@ https://www.owasp.org/index.php/Testing_for_Stored_Cross_site_scripting_(OTG-INP
 <img src="/img/reflection-week-2/xss-4.png" alt="XSS-4">
 
 <p>Completeting this challenge gave me a much greater sense of how easy an XSS attack could be performed if the proper vulnerabilities are not resolved. So many web apps these days are more than just displaying content, but allow the user to interact with it in a very powerful way. The more opportunties there are for the user to post or submit something to the database, the higher the risk of XSS vulnerabilities. Furthermore, this challenge has helped me to identify the two stages of a stored XSS attack; the script injection by the attacker and the URL hit by the victim.</p>
+
+<p>You can find my presentation on The XSS Issue <a href="/img/reflection-week-2/The XSS Issue.pptx">here</a>.</p>
 
 <h3>Receiving and Giving Static Site Assistance</h3>
 <p>I mentioned previously in my week 1 reflection that I was having difficulties setting up my static site using Netlify and Github with a Name Cheap domain name. As you can see, I have now resolved those issues and my site is live using a custom domain. Junwei encountered a similar issue this week where he could deploy the site using a generic Netlify domain but was unable to deploy it on his custom domain. With my limited experience with Netlify, I was able to remove and re-add the CName containing the custom domain to get his site to deploy properly.</p>
