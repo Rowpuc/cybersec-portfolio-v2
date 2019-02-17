@@ -1,5 +1,5 @@
 ---
-title: "Week 1"
+title: "Week 1 - Reflection"
 date: 2019-02-11T11:28:01+11:00
 draft: false
 image: "/img/unsplash-photos-nehfi_SfqtU.jpg"
