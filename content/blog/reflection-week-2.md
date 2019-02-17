@@ -83,7 +83,7 @@ thumbnail:
 
 <p>However, when I went to the Natas page, I realised that it would get stuck when loading. What I eventually discovered, was that the intercept toggle on the Proxy is enabled by default, meaning that the network packet for the site was frozen until forwarded on. This led me to understand how the proxy worked in a more practical sense, and I was able to add the Referrer and forward the packet to complete the challenge. I would like to increase my knowledge of Burp Suite in the coming weeks, having only touched the Proxy and an add on for a CSRF generator.</p>
 
-<img src="/img/reflection-week-2/burp-suit.png" alt="Burp Suite">
+<img src="/img/reflection-week-2/burp-suite.png" alt="Burp Suite">
 
 <h3>Communication, Scrums and Free-for-Alls</h3>
 <p>This week I felt as if I had the opportunity to branch out to talk and work with other students in the class who I didn’t have much contact with previously. On Friday (15/02/19), I participated in a free-for-all with Mitch, Max and Andrea. The following are some of the areas we discussed in reference to the questions in the PowerPoint slides:</p>
