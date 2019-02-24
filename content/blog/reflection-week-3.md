@@ -7,99 +7,119 @@ thumbnail:
 ---
 
 <h3>Preface</h3>
-<p>Before I get into the specifics and technical details of the work that I have been undertaking over the course of week 2, I would first like to review what my objectives were in week 1 and how they have since changed.</p>
+<p>In the previous week, we were predominately looking at web application vulnerabilities, exploits and attacks. Specifically, I decided to focus on XSS as the attack I wished to understand in full and perform against a web application. I was ultimately successfully in this endeavour, as I learnt a lot about XSS from a combination of Luke’s talk, practical examples and by attempting stored XSS challenges on root-me myself.</p>
+<p>This week was quite a bit different. We were required to attack a virtual machine (or box) in order to gain root permission, also known as ownership. This posed to be quite a challenge as it required me to overcome a steep learning curve and achieve something I’d never attempt before; that is, utilising and stringing together many different attacks to exploit a vulnerable system. As we are encouraged to constantly refine our objectives or problem statement, achieving this feat will be my goal. </p>
 
-<p>In my first reflection, I stated that:</p>
+<h3>Presentation on Wireshark and Cyberchef</h3>
+<p>We were required to present on Wednesday (20/02/19) about some of the tools used for performing enumeration or attacks. For our presentation, we decided to look at the packet analyser tool Wireshark and the multi-operation tool Cyberchef. Having already used Wireshark in networking and security subjects before, I was fairly familiar with it. However, since working on a web API at my work, I was now aware of something I would not have picked up on previously within Wireshark. I had to demonstrate both of these tools in a pico2017 challenge, and whilst doing this, I was able to recognise specific information within one of the packets that helped me identify that it was the one I was looking for. Firstly, the content-type parameter immediately told me it was an API call. As it was a POST request with query parameters, it was safe to say that the user would be posting some confidential data, such as a username and password. This realisation helped me to bridge the gap between academic learnings and the knowledge that I had accumulated at work.</p>
 
-<p style="font-style: italic;">“My objectives are to be able to perform basic attacks on web sites in a CTF environment as well as on virtual machines. This will give me a better understanding and perspective from the red team (the attacker), which from what I understand is vital in adopting the mindset of defending against such attacks. Using this knowledge and renewed perspective, I wish to improve my ability to defend against common vulnerabilities and attacks that exist in web applications.”.</p>
+<img src="/img/reflection-week-3/Presentation1.png" alt="Presentation">
+<img src="/img/reflection-week-3/Presentation2.png" alt="Presentation">
+<img src="/img/reflection-week-3/Presentation3.png" alt="Presentation">
+<img src="/img/reflection-week-3/Presentation4.png" alt="Presentation">
 
-<p>This past week we have predominately looked at web app vulnerabilities, exploits and attacks. As a slight tangent, I had to refresh my knowledge of these concepts over the week; exploiting is turning a vulnerability (or weakness) into a way to attack (or breach) a system (Ethical Hacker 2012). This opportunity to increase my knowledge and skills with web app attacks has taught me a few main things. The first being how to conduct and execute a basic stored XSS attack, which are one of the most common types of XSS. The second is the actual theory behind how these attacks work and why they are so malicious and effective. And lastly, why XSS attacks are still so prevalent amongst web applications and remain at number 3 in the OWASP Top 10 Security Exploits.</p>
+<h3>Deloitte Presentation</h3>
+<p>On Wednesday (20/02/19), we have the privilege of being visited by members of the penetration testing team at Deloitte. This was very insightful for me, as it dramatically changed my perspective of who a penetration tester actually was. As Viren mentioned, they are not top-secret hackers who are anonymous and lurk in the shadows. Rather, they are customer facing professionals who consult with other companies whilst also performing both physical and cyber penetration testing. The tests that these guys conduct are very specific in nature and have a limited scope; they are only testing one part of security.</p>
+<p>A lot of their job as a pentester requires them to adopt a certain red teaming mindset, which was referenced in Luke’s talk back in week 1. This means that the scenarios are designed to mimic realistic attacks, carried out by realistic adversaries. As part of their presentation, the people at Deloitte gave us access to one of their virtual machines, or boxes. Having never attempt a box before, this was quite daunting due to my lack of experience. Receiving help from other students and getting hints from Deloitte members helped to start to enumerate possible exploits. Beyond that, this experience made me realise how much didn’t know and what was required of me if I were to achieve my objective.</p>
 
-<p>Having said this, I have inadvertently realised that the initial scope of my objectives for this week has shrunk to focus on XSS, in particular stored XSS. Looking back on the initial scope, it was very broad and it would seem to be only natural that I would start pursing specific areas of web app security that are common and still relevant. Additionally, having just deployed a web application into production for the first time at my work, I am now very aware of the vulnerabilities that may be present and the difficulty in which they can be exploited. In the coming weeks it may be possible to do further research and perform XSS attacks on the development platform of this site in order to identify any weaknesses. This would all have to be subject to the approval of work obviously.</p>
-
-<h3>Ethical Hacking and Bug Bounties</h3>
-<p>As part of our research deliverable due on Wednesday (13/02/19) which can be found <a href="https://www.rjpuc.me/blog/ethical-hacking-and-bug-bounties/">here</a>, we had to research the ways in which bug bounty programs affect different stakeholders.</p>
-
-<img src="/img/reflection-week-2/ethical-hacking.png" alt="Ethical hacking blog post">
-
-<p>What I learnt through this process of research was quite eye opening to me. I was aware that in the traditional software development lifecycle, testing is always the stage which is conducted the least thoroughly and often skipped altogether. Enter Bug Bounties. Bug bounties provide a regulated and controlled marketplace platform for white hat hackers to identify and report on exploits for a monetary reward. With this relatively new phenomenon, companies are now adopting the mindset that no system is invulnerable, and therefore will always have bugs. This can make companies slightly apathetic towards thoroughly testing before release, and they will instead release applications with the idea of patching after launch. Reflecting on this has made me aware of the drastically changing landscape of the IT industry, in which companies are now welcoming the submission of bug reports. This is something that not too long-ago companies would have been dismissive or even hostile towards.</p>
-
-<h3>Luke’s XSS Talk</h3>
-<p>On Wednesday (13/02/19), we had a talk on XSS by Luke. This was very insightful to me, as it gave me an understanding of the criticality of XSS vulnerabilities and why they are the number one exploit on the web.</p>
-
-<p>Luke also drew up a simple diagram of how the 3 types of XSS attacks are performed, as seen in the image below. I’d predominately covered stored XSS this week, so I was able to gain a better understanding of how this attack worked in a practical sense. In essence there are 2 requests to the application server for this attack to work. The first is the saving of the information on the server’s database. The second is getting someone to execute that information to perform the attack and gain some information.</p>
-
-<p>As it says on the diagram: <i>“Attack is performed on anyone accessing the database. Can be very bad if an admin visits this infected DB i.e. admin cred’s lifted”</i>. Having since completed a stored XSS attack where I lifted the admin’s cookie, I now have the practical knowledge of how this might come about. This talk was very useful in providing me with the theory necessary to understand the attack properly. Going forward, it would be good to attempt challenges involving the other 2 types of XSS in order to increase my understanding of these attacks.</p>
-
-<img src="/img/reflection-week-2/luke-talk.png" alt="Luke's XSS Talk">
-
-<h3>The XSS Problem Statement</h3>
-<p>Our deliverable for Friday (15/02/19) was to define a problem statement and demonstrate a practical attack on an exploit which shows that this problem statement was explored.</p>
-<p>In my case the problem statement was:</p>
-
-<p style="font-style: italic;">“If relatively simple attacks such as XSS and CSRF are still in the OWASP Top 10, why do they still pose such a threat to businesses?”</p>
-
-<p>As part of my demonstration, I thought it would be necessary to perform a simple XSS attack. The particular attack which I conducted was a Stored XSS attack provided by <a href="https://www.root-me.org/en/Challenges/Web-Client/XSS-Stored-1">root-me</a>.</p>
-
-<p>Stored XSS, often called second order XSS, is the most dangerous type of Cross-site scripting according to OWASP. This is because many applications allow users to store data on their site, and if this data is not sanitised or filtered correctly, the malicious data will appear to be part of the web site and run within the user’s browser under the privileges of the web app.</p>
-
-<p>As this is a stored XSS attack, we need some way of injecting the XSS through an input, in this case a textbox. It appears someone (the admin) is deleteing old messages, so we can hope that the injected JavaScript will run when they view the message. This will hopefully steal or lift their cookie and send it to the supplied Request Bin URL. I will be using a Request Bin URL in order to collect requests that are made to the URL and this will be wrapped in an image tag. When the image is clicked, a request to the URL is made with the admin’s cookie. We can then look at Request Bin site linked to the URL to find the stolen cookie.</p>
-
-<p>This attack would potentially allow us to login as the admin using their cookie, successfully escelating the privileges of the web app.</p>
-
-<p>Firstly, I typed in a Javascript snippet into the textarea. This snippet just writes an image to the DOM (or Document Object Model) which has the Request Bin URL embedded into it. I then pressed sent.</p>
-
-<img src="/img/reflection-week-2/xss-1.png" alt="XSS-1">
-
-<p>The message has now been submitted. We can see the broken image icon displayed at the bottom, as the URL does not point to an actual image. Now when the admin clicks on the image out of curiousity, a request will be sent to the Request Bin URL containing the admin’s cookie.</p>
-
-<img src="/img/reflection-week-2/xss-2.png" alt="XSS-2">
-
-<p>After a few minutes, we can go to the Request Bin link and see the collected request with the <b>ADMIN_COOKIE</b>. Theoretically, we now have the ability to access the web app with elevated privileges.</p>
-
-<img src="/img/reflection-week-2/xss-3.png" alt="XSS-3">
-<img src="/img/reflection-week-2/xss-4.png" alt="XSS-4">
-
-<p>Completeting this challenge gave me a much greater sense of how easy an XSS attack could be performed if the proper vulnerabilities are not resolved. So many web apps these days are more than just displaying content, but allow the user to interact with it in a very powerful way. The more opportunties there are for the user to post or submit something to the database, the higher the risk of XSS vulnerabilities. Furthermore, this challenge has helped me to identify the two stages of a stored XSS attack; the script injection by the attacker and the URL hit by the victim.</p>
-
-<p>You can find my presentation on The XSS Issue <a href="/img/reflection-week-2/The XSS Issue.pptx">here</a>.</p>
-
-<h3>Static Site Assistance</h3>
-<p>I mentioned previously in my week 1 reflection that I was having difficulties setting up my static site using Netlify and Github with a Name Cheap domain name. As you can see, I have now resolved those issues and my site is live using a custom domain. Junwei encountered a similar issue this week where he could deploy the site using a generic Netlify domain but was unable to deploy it on his custom domain. With my limited experience with Netlify, I was able to remove and re-add the CName containing the custom domain to get his site to deploy properly.</p>
-
-<p>This experience gave me confidence using Netlify, as I find that teaching someone else gives me a better understanding of the tool myself.</p>
-
-<img src="/img/reflection-week-2/netlify.png" alt="Netlify">
-
-<h3>Over the Wire - Bandit</h3>
-<p>As part of our homework, we were required to undertake the Bandit challenges from Over the Wire to about level 30. I was only able to get up to level 15 due to the increasing time and commands required for each challenge. This can be seen in the following image which shows the commands I used for level 12. Level 12 was quite complicated, requiring me to find out the type of file I was dealing with before using the appropriate decoding or decompression tool. A lot of this involved trial and error, looking up man pages and searching the web for hints. It has made me realise the time involved to perform even simple CLI commands to get a hidden secret. Moving forward, it is important that I don’t underestimate how long challenges may take and the research involved with it.</p>
-
-<img src="/img/reflection-week-2/bandit12.png" alt="Bandit12">
-
-<h3>Over the Wire – Natas</h3>
-<p>Another homework task that I was assigned was the Natas challenges provided on Over the Wire. For the most part, I found the early challenges quite straightforward. One of the challenges, however, required that I change the Referrer URL in order to get the secret. I decided to use Burp Suite for this task, which I had used once before. I managed to configure Firefox to use the Burp Suite proxy, as seen below.</p>
-
-<img src="/img/reflection-week-2/firefox-config.png" alt="Firefox Network Config">
-
-<p>However, when I went to the Natas page, I realised that it would get stuck when loading. What I eventually discovered, was that the intercept toggle on the Proxy is enabled by default, meaning that the network packet for the site was frozen until forwarded on. This led me to understand how the proxy worked in a more practical sense, and I was able to add the Referrer and forward the packet to complete the challenge. I would like to increase my knowledge of Burp Suite in the coming weeks, having only touched the Proxy and an addon for a CSRF generator.</p>
-
-<img src="/img/reflection-week-2/burp-suite.png" alt="Burp Suite">
-
-<h3>Communication, Scrums and Free-for-Alls</h3>
-<p>This week I felt as if I had the opportunity to branch out to talk and work with other students in the class who I didn’t have much contact with previously. On Friday (15/02/19), I participated in a free-for-all with Mitch, Max and Andrea. The following are some of the areas we discussed in reference to the questions in the PowerPoint slides:</p>
+<h3>Free-for-alls</h3>
+<p>We had our first free-for-all for the week on Monday (18/02/19). The following is what was discussed by Brendan, Jason and me:</p>
+<p>Brendan:</p>
 <ul>
-    <li><b>Mitch</b> – He completed the Pen testers lab for XSS and SQL Injection. He did well with the XSS section, however, he struggled with the SQL injection. This was partially due to a lack of understanding about how he would be able to comment out the end of an SQL statement. This allowed the rest of the group the chance to provide ideas of how this might be achieved.</li>
-    <li><b>Max</b> – He was attempting to complete some of the Hack the Box challenges as he was at a more advanced skill level already.</li>
-    <li><b>Andrea</b> – He previously had some difficulty with his static sight, mainly trying to stop the navigation bar from closing automatically when in mobile mode.</li>
+    <li>Brendan was working on remote code injection (RCE) for a particular challenge. This involved exploiting GREP with a command such as the following ; ls ; in order to escape grep and execute the CLI command. This concept was new to me and having an example gave me a good understanding of how RCE might be achieved and what it would be useful for.</li>
+    <li>Brendan wanted to work on getting to Bandit14, which was roughly where I was up to at the time. Furthermore, he was stuck on Natas11 which it appears that many others including me are bottlenecked by. I believe this is probably due to the steep learning curve that Natas11 presents, as it requires you to perform multiple operations, including reversing a string which is XOR encrypted.</li>
 </ul>
-<p>I found free-for-alls much more useful then stand-ups. I believe this is due to them being more personal, as it allows you to question others beyond the standard responses you might hear in a stand up. Furthermore, they are more engaging than someone talking vaguely to no one in particular. I believe that stand ups would be more effective with a smaller group of students.</p>
+<p>Jason:</p>
+<ul>
+    <li>Jason has been working on his reflection.</li>
+    <li>He is working on an exploited XVWA web server image. Apparently, it is an extremely vulnerable web application. He is following a walkthrough of this in order to train himself to recognise certain vulnerabilities so that he is able to do it by himself in the future.</li>
+    <li>He is also been using Hydra which has proved to be a challenge for him.</li>
+</ul>
+<p>On Wednesday (20/02/19) we had our 2nd free-for-all discussion. This one was with Oliver, Ian, Andy and me:</p>
+<p>Oliver:</P>
+<ul>
+    <li>When asked what his greatest discover had been this week, he mentioned how interesting he had found using Beef was. I agreed with him, as I had found that demonstration quite engaging and insightful on how many web browser attacks can be performed.</li>
+    <li>Oliver was also working on a Dutch VM called Fristileaks. He had said that it was quite easy to get a user but escalating privileges proved to be a challenge. His friend David had sent him a document with some useful commands for achieving this. I feel like this would be quite useful, as I have found it to be quite difficult to enumerate after having user credentials.</li>
+</ul>
+<p>Ian</p>
+<ul>
+    <li>Ian has been working on the APointB website and believes he has found some interesting things. He has found that the website using Wordpress and thinks that there might be an XSS vulnerability on the login page.</li>
+    <li>He did Hack the Box Curling. He recommends to try that one as it is fairly beginner friendly. It starts off with Natas 1 and 2. He got root on that machine. However, he got into some rabbit holes and tried things that he thought should work but obviously didn’t. Looking back on my experiences, I can empathize with that and understand that it’s good to start looking down other paths earlier on. </li>
+</ul>
 
-<p>As for our assigned group, the Bare Minimum Bandits, we did not have nearly as much collaboration or sharing as we did last week. This is mainly due to us all working on different challenges, whether that be Natas, Hack the Box or others. I do not believe this a particularly bad thing as it gave us all an opportunity to undertake things by ourselves. We still made use of MS Teams and Planner to share vital information and plan assignments, as seen below. I believe we should make better use of these tools over the next couple of weeks to maximise our collaboration and learning.</p>
+<img src="/img/reflection-week-3/Collab.png" alt="Collaboration">
 
-<img src="/img/reflection-week-2/teams-chat.png" alt="MS Teams Chat">
-<img src="/img/reflection-week-2/teams-tasks.png" alt="MS Teams Tasks">
+<h3>Team work and Collaboration</h3>
+<p>Last week, I mentioned that I did not have a whole of collaboration with my team mates The Bare Minimum Bandits. This week, as we worked on the presentation together, we had a lot more involvement and collaboration with each other. We worked well as a team and were able to allocate tasks fairly and with an even amount of workload. This was achieved by some of us undertaking to do the demo, whilst other members researched and presented their findings. Overall, I’m satisfied with how we worked as a team in order to spread out the load evenly.</p>
 
-<ol>
-    <li>http://www.livehacking.com/2012/11/20/the-difference-between-an-expoit-and-vulnerability/</li>
-    <li>https://www.owasp.org/index.php/Testing_for_Stored_Cross_site_scripting_(OTG-INPVAL-002)</li>
-</ol>
+<img src="/img/reflection-week-3/Teams-chat.png" alt="Teams Chat">
+<img src="/img/reflection-week-3/Teams-planner.png" alt="Teams Planner">
+
+<h3>Tryhackme Mr Robot – Writeup</h3>
+<p>Firstly, I ran ifconfig to see that the point-to-point VPN connection was up. I then have to enumerate some vulnerabilities in order to find potentially exploits. I run nmap -Pn -sV to see which ports are open for the host.</p>
+
+<img src="/img/reflection-week-3/writeup1.png" alt="writeup 1">
+
+<p>As it turns out, port 80 http is open which means that there is likely a website running on the host. It turns out there is, and it is a terminal looking application. I try /files which does not give me a directory, but gives me a Wordpress page not found.</p>
+
+<img src="/img/reflection-week-3/writeup2.png" alt="writeup 2">
+
+<p>I then perform a nmap -sV <"ip address"> to enumerate some possible vulnerabilities. This provides me with some interesting possibilities. The first is that there is a /robots.txt file which I have learn often is a good place to start for useful information. The second is that I can confirm that it is a Wordpress site which has an admin login /wp-login.php.</p>
+
+<img src="/img/reflection-week-3/writeup3.png" alt="writeup 3">
+
+<p>By going to robots.txt, I am able to find the first secret inside key-1-of-3.txt. There is also a file fsocity.dic which I am not sure how to use at this stage.</p>
+
+<img src="/img/reflection-week-3/writeup4.png" alt="writeup 4">
+
+<p>As I am familiar with wpscan from Darsh’s tutorial on Monday, I decide to perform a scan.</p>
+
+<img src="/img/reflection-week-3/writeup5.png" alt="writeup 5">
+
+<p>The results of the scan tell me that there are 57 vulnerabilities. However, spending some time looking for exploits for these vulnerabilities, including a SQL Injection attack for Simple:Press  4.3.0 plugin on ExploitDB, proves to be a fruitless endevour.</p>
+<p>After looking at the help for wpscan, my next attempt is to perform a dictionary attack on the admin login. I initially try doing this using an inbuilt dictionary, before realising one is provided in fsocity.dic. I perform the attack and wait 45 minutes before cancelling as it has only progressed 0.25%.</p>
+
+<img src="/img/reflection-week-3/writeup6.png" alt="writeup 6">
+<img src="/img/reflection-week-3/writeup7.png" alt="writeup 7">
+
+<p>I decide I have to find another method, as this approach may way work, but would take many hours to complete. As I know Jason has used Hyrdra before, I decide to get his help to perform this attack with no success.</p>
+<p>I then receive a hint from a fellow student suggesting that there might be duplicate rows within the dictionary file. With that, I perform a sort for all unique rows.</p>
+
+<img src="/img/reflection-week-3/writeup8.png" alt="writeup 8">
+<img src="/img/reflection-week-3/writeup9.png" alt="writeup 9">
+
+<p>The dictionary is now only 9 words long, and I use this to successfully gain the password. I use this password to access the Wordpress console through the admin login page. I now need to start a reverse shell somehow. I try install malicious Wordpress themes and plugins in order to exploit vulnerabilities for the specific version of Wordpress, however none of these attempts succeed. I then attempt to use a Metasploit Wordpress exploit. Initially, I faced difficulties due to certain exceptions being thrown and stopping the attack. After some research, I found out that by commenting out 2 of these failure messages, the attack would succeed.</p>
+
+<img src="/img/reflection-week-3/writeup10.png" alt="writeup 10">
+<img src="/img/reflection-week-3/writeup11.png" alt="writeup 11">
+
+<p>I was then able to launch a reverse shell to gain base level access to the machine. Changing directories to /usr/robot/ I found the 2nd key file along with another password file. I did not have permission for the key file, but I was able to cat the password.raw-md5 file. I attempted to use Cyberchef to reverse the md5 hash with no success. After some research, I came across hashcat and the rockyou dictionary. Using this combination allowed me to reverse the md5 hash and get the plaintext password.</p>
+
+<img src="/img/reflection-week-3/writeup12.png" alt="writeup 12">
+<img src="/img/reflection-week-3/writeup13.png" alt="writeup 13">
+
+<p>I was then able to login as a superuser with su robot and providing the plaintext password.</p>
+
+<img src="/img/reflection-week-3/writeup14.png" alt="writeup 14">
+
+<p>I was then able to cat the 2nd key and enter this into tryhackme.com.</p>
+
+<img src="/img/reflection-week-3/writeup15.png" alt="writeup 15">
+
+<p>I now needed to priv esc to achieve root permissions. I knew that Jai had spoken about some priv esc checker tools, such as a Linenum Script which would indicate which programs may run as root without a password, and therefore are vulnerable. I tried to download multiple Github repos through the shell, however they ultimately all timed out when downloading. My next attempt was to use the unix-privesc-check tool built into Kali Linux. I quickly realised that there would be no way to use that through the shell.</p>
+
+<img src="/img/reflection-week-3/writeup16.png" alt="writeup 16">
+
+<p>After a fair amount of research and looking at priv esc walkthroughs, I came across a command that indicates applications which run as root.</p>
+
+<img src="/img/reflection-week-3/writeup17.png" alt="writeup 17">
+
+<p>One of these was nmap v3.81. After some research, I found a priv esc exploit for this nmap version and successfully performed this attack using the nmap repl (or interactive) to gain root access.</p>
+
+<img src="/img/reflection-week-3/writeup18.png" alt="writeup 18">
+
+<p>I then went to the root folder to find the 3rd and last key.</p>
+
+<img src="/img/reflection-week-3/writeup19.png" alt="writeup 19">
+
+<p>As I look back on this experience, it was just as challenging and time consuming as I had assumed. It made me understand that there is no substitute for the time and effort that must be put in, in order to successfully gain root access. As discussed many times during this subject, enumeration is often a lengthy process that leads to many dead ends and rabbit holes. I can attest to that with the Wordpress vulnerabilities that I tried to find and exploit with no success. Fortunately, I did not waste too much time with these after a few failed attempts and was able to find another means through Metasploit. This box has given me a much clearer understanding of the typical paths to take when gaining root access and what to look out for.</p>
