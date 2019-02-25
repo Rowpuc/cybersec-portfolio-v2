@@ -13,6 +13,8 @@ thumbnail:
 <h3>Presentation on Wireshark and Cyberchef</h3>
 <p>We were required to present on Wednesday (20/02/19) about some of the tools used for performing enumeration or attacks. For our presentation, we decided to look at the packet analyser tool Wireshark and the multi-operation tool Cyberchef. Having already used Wireshark in networking and security subjects before, I was fairly familiar with it. However, since working on a web API at my work, I was now aware of something I would not have picked up on previously within Wireshark. I had to demonstrate both of these tools in a pico2017 challenge, and whilst doing this, I was able to recognise specific information within one of the packets that helped me identify that it was the one I was looking for. Firstly, the content-type parameter immediately told me it was an API call. As it was a POST request with query parameters, it was safe to say that the user would be posting some confidential data, such as a username and password. This realisation helped me to bridge the gap between academic learnings and the knowledge that I had accumulated at work.</p>
 
+You can find our Wireshark and Cyberchef <a href="/img/reflection-week-3/Wireshark and Cyberchef.pptx" alt="Presentation">presentation here</a>.
+
 <img src="/img/reflection-week-3/Presentation1.png" alt="Presentation">
 <img src="/img/reflection-week-3/Presentation2.png" alt="Presentation">
 <img src="/img/reflection-week-3/Presentation3.png" alt="Presentation">
@@ -21,6 +23,8 @@ thumbnail:
 <h3>Deloitte Presentation</h3>
 <p>On Wednesday (20/02/19), we have the privilege of being visited by members of the penetration testing team at Deloitte. This was very insightful for me, as it dramatically changed my perspective of who a penetration tester actually was. As Viren mentioned, they are not top-secret hackers who are anonymous and lurk in the shadows. Rather, they are customer facing professionals who consult with other companies whilst also performing both physical and cyber penetration testing. The tests that these guys conduct are very specific in nature and have a limited scope; they are only testing one part of security.</p>
 <p>A lot of their job as a pentester requires them to adopt a certain red teaming mindset, which was referenced in Luke’s talk back in week 1. This means that the scenarios are designed to mimic realistic attacks, carried out by realistic adversaries. As part of their presentation, the people at Deloitte gave us access to one of their virtual machines, or boxes. Having never attempt a box before, this was quite daunting due to my lack of experience. Receiving help from other students and getting hints from Deloitte members helped to start to enumerate possible exploits. Beyond that, this experience made me realise how much didn’t know and what was required of me if I were to achieve my objective.</p>
+
+<img src="/img/reflection-week-3/deloitte-talk.png" alt="Deloitte Talk">
 
 <h3>Free-for-alls</h3>
 <p>We had our first free-for-all for the week on Monday (18/02/19). The following is what was discussed by Brendan, Jason and me:</p>
