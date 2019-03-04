@@ -1,6 +1,6 @@
 ---
-title: "Conclusion"
-date: 2019-03-03T22:02:01+11:00
+title: "Final Submission"
+date: 2019-03-04T22:02:01+11:00
 draft: false
 image: "/img/unsplash-photos-nehfi_SfqtU.jpg"
 thumbnail:
@@ -18,7 +18,7 @@ thumbnail:
 <h3>Final Reflective Statement with Artefacts</h3>
 <p>The following breaks down my reflection of the ways in which my learning was achieved:</p>
 
-<b>1. Engage with stakeholders to identify a problem<b>
+<h4>1. Engage with stakeholders to identify a problem</h4>
 
 <p>As indicated in my conclusion, engaging with stakeholders either one-on-one or through presentations has been a significant part of my learning experiences. This was first evinced with Robert from Gitlab who provided a basis for my understanding of the current state of the security industry and how it got to where it is now. This opportunity also allowed to ask questions about the advantages and disadvantages between Bitbucket and Gitlab as CI/CD products, allowing me to take abstract ideas and put it into a way that made sense for me.</p>
 <p>Furthermore, interactive workshops from Darsh, Luke, Deloitte and Rubin gave me a deeper understanding of their respective subject matter. This is definitely true for Luke’s XSS talk, which was perfect for me as it included a whiteboard session in which he broke down concepts into easily understandable ideas. As a visual learner, I greatly appreciated this and was able to identify the problems which cause XSS much more easily.</p>
@@ -26,24 +26,24 @@ thumbnail:
 <img src="/img/reflection-week-2/luke-talk.png" alt="Luke's Talk">
 <img src="/img/reflection-week-3/deloitte-talk.png" alt="Deloitte Talk">
 
-<b>2. Apply design thinking to respond to a defined or newly identified problem</b>
+<h4>2. Apply design thinking to respond to a defined or newly identified problem</h4>
 
 <p>Throughout the Summer Studio, I had many opportunities to identify security vulnerabilities within a system or web application before formulating a way to exploit these vulnerabilities (as after all, we are looking at the offensive side of security). This was clearly seen during the enumeration process of both the vulnerable machines that I gained ownership of.</p>
 <p>Learning the fox and the rabbit hole mentality from Luke provided the basis for this learning. After that, I was able to begin my own enumeration process on Mr Robot. This taught me a valuable lesson; that enumeration is time consuming and requires a lot of research. This definitely affirmed what I had learnt from Luke, making me aware that there is no substitute for experience. However, as I progressed to the HackTheBox challenge, I was able to utilise the small amount of experience I had in order to develop my own basic enumeration methodology.</p>
 
 <img src="/img/final-submission/enumeration.png" alt="Enumeration">
 
-<b>3. Apply technical skills to develop, model and/or evaluate design</b>
+<h4>3. Apply technical skills to develop, model and/or evaluate design</h4>
 
 <p>As I believe the last learning outcome crosses over, I will discuss this SLO as a continuation of my idea in the previous SLO. Having developed a method of enumerating, I was then able to more effectively identify vulnerabilities in order to begin exploiting them. This process was a very tedious but rewarding one, as it required me to do go down many dead ends and attempt many exploits before finding one that achieved my purpose. This taught me that there are many different ways to achieve the same goal, all of which depend on your approach and past experiences.</p>
 <p>Furthermore, I found that the more that I investigated exploits for vulnerable systems, the more I was acutely aware of the dangers they could cause to a business. This enhanced my ability to research and present mitigations to these vulnerabilities.</p>
 
-<b>4. Demonstrate effective collaboration and communication skills</b>
+<h4>4. Demonstrate effective collaboration and communication skills</h4>
 
 <p>Throughout the 4 weeks, I was required to present to the class or an individual on multiple occasions. This helped me to solidify my understanding of key concepts and increased my confidence in demonstrating a practical attack to an audience. This was especially true for my presentation with Roger, where I was able to demonstrate a practical attack to someone who had no prior understanding. Although I may not have expressed key concepts as clearly as I could have, I do believe this experience helped me to find simpler ways of explaining things.</p>
 <p>As a team, the Bare Minimum Bandits worked very well together when we had to collaborate on either a presentation or a group-based task. We utilised tools such as MS Teams and MS Planner in order keep on track and delegate tasks. I believe these tools were vital for successful presentations, as it meant that we could count on one another due to being able to provide instant progress updates and feedback.</p>
 
-<b>5. Conduct critical self and peer review and performance evaluation</b>
+<h4>5. Conduct critical self and peer review and performance evaluation</h4>
 
 <p>I believe that throughout each reflection process, I was conducting a thorough and comprehensive critical self and peer review. The sheer amount of both theoretical and practical knowledge I had to comb over convinced me that I was continually doing well when it came to my actual learnings and engagement with the subject content as a whole. However, as I was consistently in a state of feeling rushed and short of time, I believe that my time management could have been more effective as a whole. As I write this submission, I am pushed for time due to underestimating the sheer amount of content required in this subject.</p>
 <p>As for assessing the performance of my peers, I believe that the vast majority of my interactions with fellow students was very positive. When it came to collaborating on a presentation, they were always available to discuss ideas and progress on MS Teams. And when the presentation itself came around, we had delegated well enough that it came together with little practice.</p>
