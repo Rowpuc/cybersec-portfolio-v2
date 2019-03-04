@@ -36,14 +36,21 @@ thumbnail:
 <h4>3. Apply technical skills to develop, model and/or evaluate design</h4>
 
 <p>As I believe the last learning outcome crosses over, I will discuss this SLO as a continuation of my idea in the previous SLO. Having developed a method of enumerating, I was then able to more effectively identify vulnerabilities in order to begin exploiting them. This process was a very tedious but rewarding one, as it required me to do go down many dead ends and attempt many exploits before finding one that achieved my purpose. This taught me that there are many different ways to achieve the same goal, all of which depend on your approach and past experiences.</p>
-<p>Furthermore, I found that the more that I investigated exploits for vulnerable systems, the more I was acutely aware of the dangers they could cause to a business. This enhanced my ability to research and present mitigations to these vulnerabilities.</p>
+<p>Furthermore, I found that the more that I investigated exploits for vulnerable systems, the more I was acutely aware of the dangers they could cause to a business. This enhanced my ability to research and present mitigations to these vulnerabilities. Refer to my Hack The Box writeup for evidence of this.</p>
+
+<img src="/img/final-submission/exploitation.png" alt="Exploitation">
 
 <h4>4. Demonstrate effective collaboration and communication skills</h4>
 
 <p>Throughout the 4 weeks, I was required to present to the class or an individual on multiple occasions. This helped me to solidify my understanding of key concepts and increased my confidence in demonstrating a practical attack to an audience. This was especially true for my presentation with Roger, where I was able to demonstrate a practical attack to someone who had no prior understanding. Although I may not have expressed key concepts as clearly as I could have, I do believe this experience helped me to find simpler ways of explaining things.</p>
 <p>As a team, the Bare Minimum Bandits worked very well together when we had to collaborate on either a presentation or a group-based task. We utilised tools such as MS Teams and MS Planner in order keep on track and delegate tasks. I believe these tools were vital for successful presentations, as it meant that we could count on one another due to being able to provide instant progress updates and feedback.</p>
 
+<img src="/img/reflection-week-4/final-presentation-1.png" alt="Final Presentation 1">
+<img src="/img/reflection-week-3/Teams-chat.png" alt="MS Teams Chat">
+
 <h4>5. Conduct critical self and peer review and performance evaluation</h4>
 
 <p>I believe that throughout each reflection process, I was conducting a thorough and comprehensive critical self and peer review. The sheer amount of both theoretical and practical knowledge I had to comb over convinced me that I was continually doing well when it came to my actual learnings and engagement with the subject content as a whole. However, as I was consistently in a state of feeling rushed and short of time, I believe that my time management could have been more effective as a whole. As I write this submission, I am pushed for time due to underestimating the sheer amount of content required in this subject.</p>
 <p>As for assessing the performance of my peers, I believe that the vast majority of my interactions with fellow students was very positive. When it came to collaborating on a presentation, they were always available to discuss ideas and progress on MS Teams. And when the presentation itself came around, we had delegated well enough that it came together with little practice.</p>
+
+<img src="/img/final-submission/peer-review.png" alt="Peer Review">

@@ -7,7 +7,7 @@ thumbnail:
 ---
 
 <h3>Preface</h3>
-<p>Last week’s objective was to gain root access to a public virtual machine. I was successful in this endeavour, as I was able to gain root to the Mr Robot box on tryhackme.com. Following on from this, I’ve decided that this week’s main goal is to own an Active box on hackthebox.eu. This is the logic progression in order to challenge myself, although I believe that this will be a substantial task to undertake as I have only completed the one box so far.</p>
+<p>Last week’s objective was to gain root access to a public virtual machine. I was successful in this endeavour, as I was able to gain root to the Mr Robot box on tryhackme.com. Following on from this, I’ve decided that this week’s main goal is to own an Active box on hackthebox.eu. This is the logical progression in order to challenge myself, although I believe that this will be a substantial task to undertake as I have only completed the one box so far.</p>
 
 <h3>Reverse Engineering Talk</h3>
 <p>On Monday of this week, we had Rubin come and deliver a workshop on reverse engineering. This was quite insightful for me and it was interesting to be able to understand the differences between registers, the stack and the heap. As well as this, we learnt keywords to remember, such as a move or a put in regard to data. It was initially quite overwhelming when we opened the binary files in Binary Ninja, as there were so many files with seemingly random character strings, containers and links. However, once Rubin broke the data and functions down, it was much easier to identifier the if-else statements and recursive loops which are integral to the logic of programming languages.</p>
